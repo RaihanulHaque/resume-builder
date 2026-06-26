@@ -18,7 +18,10 @@
 \usepackage{tabularx}
 \usepackage{microtype}
 \usepackage{needspace}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -30,8 +33,8 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.45in}
-\addtolength{\textheight}{0.9in}
+\addtolength{\topmargin}{-0.48in}
+\addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
 \raggedbottom
@@ -42,7 +45,9 @@
   \vspace{2pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule\vspace{-2pt}]
 
-\pdfgentounicode=1
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
 
 %-------- CUSTOM COMMANDS --------
 
@@ -95,9 +100,9 @@
 %-----------SUMMARY-----------
 \section{Summary}
 \small{
-  Final-year Mechatronics Engineering student with production experience building AI-powered backend systems,
-  real-time voice agent pipelines, and on-device ML applications. Published researcher (Elsevier, 2025);
-  competitive programmer (Codeforces 1280); open-source contributor to a 40k-star Microsoft repository.
+  AI engineer working across agentic backends, real-time voice systems, and edge/on-device ML.
+  Builds production Django/FastAPI systems, speech pipelines, and optimized computer-vision models;
+  published researcher in AI nutrition and open-source contributor to voice synthesis tooling.
 }
 
 \vspace{2pt}
@@ -117,9 +122,7 @@
     \textbf{Languages:}\quad Python, C/C++, Dart, Rust, Swift, SQL \\
     \textbf{Frameworks \& Libraries:}\quad FastAPI, Django, Flutter, PyTorch, TensorFlow, MLX, LangChain, HuggingFace \\
     \textbf{Databases \& Infra:}\quad PostgreSQL, Supabase, Redis, Firebase, Docker, WebRTC, LiveKit, FastRTC \\
-    \textbf{AI / ML:}\quad LLM integration (OpenAI, Gemini, Groq), ASR/TTS/VAD pipelines,
-                        Computer Vision (YOLO, stereo depth), on-device inference (TFLite, ONNX, MLX),
-                        model quantization \& optimization
+    \textbf{AI / ML:}\quad Agentic LLM workflows, ASR/TTS/VAD, YOLO, stereo depth, TFLite, ONNX, MLX, quantization
   }
 \end{itemize}
 
@@ -139,24 +142,17 @@
 
   \resumeSubheading
     {Cortex Technologies}{Jan 2024 -- Present}
-    {Co-Founder, Edge AI Engineer}{Self-Employed}
+    {ML Engineer}{Contract Collaboration}
     \resumeItemListStart
-      \resumeItem{Lead computer-vision model development for client projects: custom object detection pipelines, stereo depth estimation, and real-time vision inference on resource-constrained edge hardware}
-      \resumeItem{Architect language-model integrations for NLP automation tasks, covering model selection, quantization (TFLite/ONNX), and end-to-end deployment on edge devices}
+      \resumeItem{Own the ML engineering track for client projects sourced through a small freelance collaboration, building custom object detection pipelines, stereo depth estimation, and real-time edge-vision inference}
+      \resumeItem{Build LLM automation components for client workflows, covering model selection, prompt/tool orchestration, quantization (TFLite/ONNX), and deployment on edge devices}
     \resumeItemListEnd
 
   \resumeSubheading
-    {Outlier}{Sep 2024 -- Dec 2024}
-    {AI Trainer, Quality Reviewer}{Remote}
+    {Outlier / Remotasks}{Jul 2023 -- Dec 2024}
+    {AI Trainer \& LLM Data Quality Reviewer}{Remote}
     \resumeItemListStart
-      \resumeItem{Evaluated and corrected AI-generated solutions across mathematics and code, contributing to measurable improvement in model reasoning accuracy on complex problem categories}
-    \resumeItemListEnd
-
-  \resumeSubheading
-    {Remotasks}{Jul 2023 -- Jan 2024}
-    {LLM Dataset Inspector}{Remote}
-    \resumeItemListStart
-      \resumeItem{Audited LLM training datasets spanning multiple programming languages, enforcing data quality standards that directly impact code-generation fine-tuning pipelines}
+      \resumeItem{Reviewed AI-generated math/code solutions and audited multilingual programming datasets for model reasoning and code-generation fine-tuning quality}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -166,64 +162,42 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{Gesprek} $|$ \emph{FastAPI, PostgreSQL, Redis, Supabase, Docker, ElevenLabs, LiveKit}}{Co-founded Startup}
+    {\textbf{Gesprek} $|$ \emph{FastAPI, PostgreSQL, Redis, Supabase, Docker, ElevenLabs, LiveKit}}{Archived}
     \resumeItemListStart
-      \resumeItem{Co-founded and shipped a \textbf{production voice-agent platform} that enables configurable, niche-specific multi-agent deployments with a modular FastAPI backend, Supabase auth, and Redis-backed real-time TTS}
-      \resumeItem{Engineered multi-tenant agent orchestration, subscription management, and independently scalable containerized services; platform is live and onboarding its first clients}
+      \resumeItem{Built and deployed a \textbf{production-ready voice-agent platform} with configurable multi-agent workflows, Supabase auth, Redis-backed real-time TTS, subscriptions, and containerized services}
+      \resumeItem{Engineered multi-tenant agent orchestration and independently scalable services; later archived after feasibility validation due to market and infrastructure constraints}
     \resumeItemListEnd
 
   \resumeProjectHeading
     {\textbf{StereoLite: Lightweight Stereo Depth Estimation} $|$ \emph{PyTorch, ONNX $\cdot$ B.Sc.\ Thesis}}{Active}
     \resumeItemListStart
-      \resumeItem{Designed an \textbf{11.1M-parameter} stereo depth model that is \textbf{3$\times$ smaller} than DEFOM-Stereo (30M+\,params) and requires \textbf{4$\times$ less VRAM} (1.5\,GB vs.\ 6\,GB), achieving EPE\,0.57 in 1\,600 training steps}
-      \resumeItem{Decoupled iterative multi-scale GRU refinement from a frozen DINOv2 backbone, demonstrating that refinement quality outperforms backbone scale at a fraction of compute and memory cost}
+      \resumeItem{Designed an \textbf{under-3M-parameter} stereo depth model that is \textbf{10$\times$+ smaller} than DEFOM-Stereo (30M+\,params) and requires \textbf{4$\times$ less VRAM} (1.5\,GB vs.\ 6\,GB), achieving EPE\,0.57 in 1\,600 training steps}
+      \resumeItem{Decoupled iterative multi-scale GRU refinement from a frozen DINOv2 backbone, reducing compute and memory cost while preserving depth-refinement quality}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{Hishab: Agentic Expense Tracker} $|$ \emph{Flutter, FastAPI, Google Gemini, Supabase}}{May 2024 -- Aug 2025}
+    {\textbf{Hishab: Agentic Expense Tracker} $|$ \emph{Flutter, FastAPI, Supabase, SQLModel}}{May 2024 -- Aug 2025}
     \resumeItemListStart
-      \resumeItem{Built a production Flutter\,+\,FastAPI app that turns Banglish (Bengali/English) natural-language prompts into structured financial records using \textbf{Google Gemini function-calling}}
-      \resumeItem{Implemented multi-tenant auth with Supabase row-level security, SMTP notification flows, and a companion web client}
+      \resumeItem{Built a production Flutter\,+\,FastAPI app that converts Banglish natural-language prompts into structured financial records using \textbf{agentic tool-calling workflows}}
+      \resumeItem{Implemented Supabase row-level-security auth, SMTP notification flows, SQLModel persistence, and a companion web client}
     \resumeItemListEnd
 
   \resumeProjectHeading
     {\textbf{Diet Engine: AI Nutrition Coach} $|$ \emph{Flutter, FastAPI, PyTorch, Firebase}}{Feb -- May 2024}
     \resumeItemListStart
-      \resumeItem{\textbf{Published} peer-reviewed research in \textit{Food Chemistry Advances} (Elsevier, 2025) on a real-time food recognition and personalised nutrition system; \href{https://doi.org/10.1016/j.focha.2025.100978}{\texttt{doi:10.1016/j.focha.2025.100978}}}
-      \resumeItem{Designed the complete stack: Flutter mobile client, FastAPI inference server with PyTorch food classification models, and Firebase authentication}
+      \resumeItem{\textbf{Published} peer-reviewed research in \textit{Food Chemistry Advances} (Elsevier, 2025) on real-time food recognition and personalised nutrition; built the Flutter client, FastAPI/PyTorch inference server, and Firebase auth}
     \resumeItemListEnd
 
-  \resumeProjectHeading
-    {\textbf{Perceptron: On-Device Image Classifier} $|$ \emph{Flutter, TFLite}}{Nov 2025}
-    \resumeItemListStart
-      \resumeItem{Designed a \textbf{model-agnostic} TFLite inference engine in Flutter with an error-adaptive backend-swap architecture, enabling any classification model to run entirely on-device without server dependency}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------OPEN SOURCE-----------
-\section{Open Source}
-\resumeSubHeadingListStart
-  \resumeProjectHeading
-    {\textbf{Microsoft / VibeVoice} $|$ \emph{40{,}000+ GitHub stars, Emotional Voice Synthesis}}{2024}
-    \resumeItemListStart
-      \resumeItem{Contributed package-import support to a state-of-the-art emotional TTS model maintained under the Microsoft organisation}
-    \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 %-----------ACHIEVEMENTS-----------
 \section{Achievements \& Activities}
-\begin{itemize}[leftmargin=0.2in, itemsep=3pt, topsep=2pt]
+\begin{itemize}[leftmargin=0.2in, itemsep=1pt, topsep=1pt]
   \small{
     \item \textbf{JAXA Kibo Robot Programming Challenge 2025:} \textbf{1st place, Bangladesh regional}; \textbf{4th place globally};
           programmed Astrobee robots for zero-gravity navigation and AR object recognition aboard the ISS
-          (improved from 2nd place in 2024)
-    \item \textbf{Competitive Programming:} Codeforces rating \textbf{1280} (Pupil); data structures, algorithms, combinatorics
-    \item \textbf{National Robotics Competition, RUET 2022 (Team Cortex):}
-          Designed and built a fully autonomous vision-guided 6-DOF robotic arm
-    \item \textbf{Coding Club Lead:} Led RUET student coding club;
-          taught C/C++ and algorithmic problem-solving to first-year engineering students
-    \item \textbf{Rahi 404 (YouTube):} Runs a technical channel covering Python, machine learning, and AI engineering.
+    \item \textbf{Microsoft / VibeVoice:} Contributed package-import support to a 40k+ star emotional voice-synthesis repository
+    \item \textbf{Leadership:} Codeforces rating \textbf{1280} (Pupil); led RUET coding club and taught C/C++ problem-solving to first-year students; runs Rahi 404 technical YouTube channel
   }
 \end{itemize}
 

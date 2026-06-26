@@ -1,7 +1,7 @@
 # Rahi - Full Info Dump (Resume Research)
 
 > Source: Resume V6, codebase exploration (~75 projects), memory files  
-> Last updated: 2026-04-16
+> Last updated: 2026-06-26
 
 ---
 
@@ -30,6 +30,11 @@ March 2022 — August 2026 (expected)
 
 ## WORK EXPERIENCE
 
+### Resume Summary Direction
+- AI engineer working across agentic backends, real-time voice systems, and edge/on-device ML
+- Avoid "final-year student" framing because graduation is near; education already provides the timeline
+- Tone should be modern, focused, and systems-oriented rather than generic student/resume phrasing
+
 ### Intelsense AI | Backend Engineer
 **April 2024 – Present**
 - Owns backend architecture for an AI-powered SaaS platform
@@ -37,12 +42,12 @@ March 2022 — August 2026 (expected)
 - Integrated production LLM, ASR, and TTS inference pipelines into the web backend
 - Enables real-time AI voice and text interaction features at the product layer
 
-### Cortex Technologies | Co-Founder, Edge AI Engineer
-**January 2024 – Present** | Self-Employed / Freelance  
-Context: Co-founded with friends; takes on freelance/client projects in Edge AI
+### Cortex Technologies | ML Engineer
+**January 2024 – Present** | Contract / Freelance Collaboration  
+Context: Collaborative client-project work with Abrar/Cortex Technologies. Abrar sources freelance/client projects; Rahi owns the ML/AI engineering portion. This should not be framed as a funded startup or formal company employment.
 
-- Leads computer-vision model development: custom YOLO-based detection pipelines, stereo depth estimation, real-time vision inference on resource-constrained edge hardware
-- Architects language-model integrations for NLP automation tasks: model selection, quantization (TFLite/ONNX), end-to-end deployment on edge devices
+- Owns ML engineering for client projects: custom YOLO-based detection pipelines, stereo depth estimation, and real-time vision inference on resource-constrained edge hardware
+- Builds language-model and automation components for client workflows, including model selection, prompt/tool orchestration, quantization (TFLite/ONNX), and deployment on edge devices
 
 ### Outlier | AI Trainer, Quality Reviewer
 **September 2024 – December 2024**
@@ -71,7 +76,7 @@ Python (primary), C/C++, Dart/Flutter, Rust, Swift, SQL
 ### AI/ML Specializations
 - Voice AI: VAD, ASR, TTS, real-time speech pipelines
 - Computer Vision: YOLO, stereo depth estimation, object detection
-- LLM Integration: OpenAI, Google Gemini, Groq, function calling, AI agents
+- LLM Integration: provider-agnostic LLM APIs, Groq-hosted inference, function/tool calling, AI agents
 - On-device inference: TFLite, MLX, ONNX, quantization (3–8 bit)
 - Edge AI: model optimization, deployment on resource-constrained hardware
 
@@ -86,18 +91,20 @@ Docker, Docker Compose, WebRTC, WebSocket, LiveKit, FastRTC
 Parakeet (NeMo), Whisper, Kokoro, Qwen3-TTS, ElevenLabs, Deepgram, Silero VAD
 
 ### LLMs Used
-GPT, Google Gemini, Groq, Local Models (MLX-based)
+GPT-family APIs, provider-hosted LLM APIs, Groq-hosted models, local models (MLX-based)
 
 ---
 
 ## PROJECTS
 
-> Resume order: Gesprek → StereoLite → Hishab → Diet Engine → Perceptron
+> Current resume order: Gesprek → StereoLite → Hishab → Diet Engine  
+> Perceptron remains a backup/optional project, but is omitted from the compact one-page resume.
 
 ### Gesprek — AI Voice Agents Platform
-**Status:** Co-founded startup, deployed, actively onboarding clients  
+**Status:** Built/deployed as a full product prototype; now archived/shut down after feasibility and market constraints  
 **Stack:** FastAPI, Supabase, PostgreSQL, Redis, Docker, ElevenLabs, LiveKit
-- Co-founded with a friend; system is deployed and currently seeking enterprise clients
+- Built with a friend as an end-to-end voice-agent product, including domain, deployment, backend, auth, subscriptions, and voice infrastructure
+- Project was discontinued after validation due to investment constraints, technical feasibility issues, and local-market fit concerns
 - Enables configurable, niche-specific multi-agent voice deployments
 - Modular FastAPI backend, Supabase auth, Redis-backed real-time TTS (ElevenLabs)
 - Multi-tenant agent orchestration, subscription management
@@ -107,8 +114,8 @@ GPT, Google Gemini, Groq, Local Models (MLX-based)
 ### StereoLite — Lightweight Stereo Depth Estimation (Thesis)
 **Status:** Active research  
 **Stack:** PyTorch, ONNX  
-- 11.1M parameter stereo matching model — no foundation model dependency
-- 3× smaller than DEFOM-Stereo (11.1M vs 30M+ params)
+- Under-3M-parameter stereo matching model — no foundation model dependency
+- More than 10× smaller than DEFOM-Stereo (<3M vs 30M+ params)
 - 4× less VRAM: 1.5GB vs 6GB at 720p
 - Multi-level GRU hierarchy (3 scales: 1/4, 1/8, 1/16)
 - EPE 0.57 in 1,600 training steps
@@ -118,9 +125,9 @@ GPT, Google Gemini, Groq, Local Models (MLX-based)
 
 ### Hishab — Agentic Expense Tracking App
 **May 2024 – August 2025**  
-**Stack:** Flutter, FastAPI, Google Gemini (function-calling), Supabase, SQLModel
+**Stack:** Flutter, FastAPI, agentic LLM workflows, Supabase, SQLModel
 - Tracks income/expenses through natural-language prompts in Banglish (Bengali+English)
-- Gemini function calling for AI-driven financial logic
+- Agent/tool-calling workflow for AI-driven financial parsing, categorization, and record creation
 - Full auth, user isolation (row-level security), SMTP integration
 - Has both Flutter mobile app and companion web frontend
 
@@ -219,4 +226,4 @@ DOI: [https://doi.org/10.1016/j.focha.2025.100978](https://doi.org/10.1016/j.foc
 
 ## TECH TAGS (for ATS/keyword optimization)
 
-Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, OpenAI API, Google Gemini, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, FastRTC, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
+Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, FastRTC, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
