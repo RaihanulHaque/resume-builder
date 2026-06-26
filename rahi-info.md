@@ -76,7 +76,7 @@ Python (primary), C/C++, Dart/Flutter, Rust, Swift, SQL
 ### AI/ML Specializations
 - Voice AI: VAD, ASR, TTS, real-time speech pipelines
 - Computer Vision: YOLO, stereo depth estimation, object detection
-- LLM Integration: provider-agnostic LLM APIs, Groq-hosted inference, function/tool calling, AI agents
+- LLM Integration: provider-agnostic LLM APIs, RAG, Groq-hosted inference, function/tool calling, AI agents
 - On-device inference: TFLite, MLX, ONNX, quantization (3–8 bit)
 - Edge AI: model optimization, deployment on resource-constrained hardware
 
@@ -226,4 +226,4 @@ DOI: [https://doi.org/10.1016/j.focha.2025.100978](https://doi.org/10.1016/j.foc
 
 ## TECH TAGS (for ATS/keyword optimization)
 
-Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, FastRTC, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
+Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, RAG, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, FastRTC, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
