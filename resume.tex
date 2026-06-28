@@ -4,10 +4,10 @@
 % Compiled with: pdflatex resume.tex
 %-------------------------
 
-\documentclass[letterpaper,10.5pt]{extarticle}
+\documentclass[a4paper,11.5pt]{extarticle}
 
 \usepackage{latexsym}
-\usepackage[empty]{fullpage}
+\usepackage[a4paper,left=0.55in,right=0.55in,top=0.60in,bottom=0.60in]{geometry}
 \usepackage{titlesec}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
@@ -18,6 +18,7 @@
 \usepackage{tabularx}
 \usepackage{microtype}
 \usepackage{needspace}
+\usepackage{ragged2e}
 \usepackage{iftex}
 \ifPDFTeX
   \input{glyphtounicode}
@@ -30,15 +31,12 @@
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\footskip}{4pt}
 
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.48in}
-\addtolength{\textheight}{1.0in}
-
 \urlstyle{same}
 \raggedbottom
-\raggedright
+\justifying
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=2em
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
@@ -52,21 +50,21 @@
 %-------- CUSTOM COMMANDS --------
 
 \newcommand{\resumeItem}[1]{
-  \item\small{#1\vspace{1pt}}
+  \item\normalsize{#1\vspace{1pt}}
 }
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \small#2 \\
-      \textit{\small#3} & \textit{\small#4} \\
+      \textit{#3} & \textit{\small#4} \\
     \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
   \vspace{2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \small#2 \\
+      #1 & \small#2 \\
     \end{tabular*}\vspace{-4pt}
 }
 
@@ -74,7 +72,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2pt}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=2pt, topsep=2pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=1pt, topsep=1pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{2pt}}
 
 %===========================================
@@ -99,10 +97,10 @@
 
 %-----------SUMMARY-----------
 \section{Summary}
-\small{
-  AI engineer working across agentic backends, real-time voice systems, and edge/on-device ML.
-  Builds production Django/FastAPI systems, speech pipelines, and optimized computer-vision models;
-  published researcher in AI nutrition and open-source contributor to voice synthesis tooling.
+\normalsize{
+  AI engineer working across agentic backends, real-time voice systems, and edge and on-device ML.
+  Builds production Django/FastAPI systems, speech pipelines, and optimized computer-vision models,
+  with peer-reviewed research in AI nutrition and open-source contributions to voice synthesis tooling.
 }
 
 \vspace{2pt}
@@ -112,16 +110,16 @@
 \resumeSubHeadingListStart
   \resumeSubheading
     {Rajshahi University of Engineering \& Technology (RUET)}{Rajshahi, Bangladesh}
-    {B.Sc.\ in Mechatronics Engineering}{Mar 2022 -- Aug 2026 (Expected)}
+    {B.Sc.\ in Mechatronics Engineering $|$ CGPA: 3.19/4.00}{2022 -- 2026}
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt, topsep=2pt]
-  \small\item{
+  \normalsize\item{
     \textbf{Languages:}\quad Python, C/C++, Dart, Rust, Swift, SQL \\
     \textbf{Frameworks \& Libraries:}\quad FastAPI, Django, Flutter, PyTorch, TensorFlow, MLX, LangChain, HuggingFace \\
-    \textbf{Databases \& Infra:}\quad PostgreSQL, Supabase, Redis, Firebase, Docker, WebRTC, LiveKit, FastRTC \\
+    \textbf{Databases \& Infra:}\quad PostgreSQL, Supabase, Redis, Firebase, Docker, WebRTC, LiveKit \\
     \textbf{AI / ML:}\quad Agentic LLM workflows, RAG, ASR/TTS/VAD, YOLO, stereo depth, TFLite, ONNX, MLX, quantization
   }
 \end{itemize}
@@ -137,7 +135,8 @@
     {Backend Engineer}{Remote}
     \resumeItemListStart
       \resumeItem{Own the backend architecture for an AI-powered SaaS platform, designing \textbf{Django}/\textbf{PostgreSQL} systems with a focus on modularity, reliability, and scale}
-      \resumeItem{Integrated production \textbf{LLM, ASR, and TTS} inference pipelines into the web backend, enabling real-time AI voice and text interaction features at the product layer}
+      \resumeItem{Architect production \textbf{RAG} services with structured ingestion and retrieval flows, resilient failure handling, and reliable product-facing APIs}
+      \resumeItem{Build \textbf{OCR and ASR data-collection pipelines} and integrate LLM, speech, and document-processing capabilities into the web backend}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -145,7 +144,8 @@
     {ML Engineer}{Contract Collaboration}
     \resumeItemListStart
       \resumeItem{Own the ML engineering track for client projects sourced through a small freelance collaboration, building custom object detection pipelines, stereo depth estimation, and real-time edge-vision inference}
-      \resumeItem{Build LLM automation components for client workflows, covering model selection, prompt/tool orchestration, quantization (TFLite/ONNX), and deployment on edge devices}
+      \resumeItem{Built an automated object-detection dataset pipeline that uses \textbf{SAM 3} to generate bounding boxes from user-provided labels and exports annotations in \textbf{COCO format}}
+      \resumeItem{Optimize and deploy models on resource-constrained hardware using \textbf{TFLite}, \textbf{ONNX}, and quantization techniques}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -168,11 +168,12 @@
       \resumeItem{Engineered multi-tenant agent orchestration and independently scalable services; later archived after feasibility validation due to market and infrastructure constraints}
     \resumeItemListEnd
 
+  \newpage
   \resumeProjectHeading
     {\textbf{StereoLite: Lightweight Stereo Depth Estimation} $|$ \emph{PyTorch, ONNX $\cdot$ B.Sc.\ Thesis}}{Active}
     \resumeItemListStart
-      \resumeItem{Designed an \textbf{under-3M-parameter} stereo depth model that is \textbf{10$\times$+ smaller} than DEFOM-Stereo (30M+\,params) and requires \textbf{4$\times$ less VRAM} (1.5\,GB vs.\ 6\,GB), achieving EPE\,0.57 in 1\,600 training steps}
-      \resumeItem{Decoupled iterative multi-scale GRU refinement from a frozen DINOv2 backbone, reducing compute and memory cost while preserving depth-refinement quality}
+      \resumeItem{Designed a stereo depth model with \textbf{fewer than 3M parameters}, over \textbf{10$\times$ smaller} than DEFOM-Stereo (30M+), while using \textbf{4$\times$ less VRAM} (1.5 GB versus 6 GB) and reaching EPE 0.96 after 85,000 training steps}
+      \resumeItem{Decoupled iterative multi-scale GRU refinement from a frozen DINOv2 backbone to reduce compute and memory costs while preserving depth-refinement quality across scales}
     \resumeItemListEnd
 
   \resumeProjectHeading
@@ -185,15 +186,24 @@
   \resumeProjectHeading
     {\textbf{Diet Engine: AI Nutrition Coach} $|$ \emph{Flutter, FastAPI, PyTorch, Firebase}}{Feb -- May 2024}
     \resumeItemListStart
-      \resumeItem{\textbf{Published} peer-reviewed research in \textit{Food Chemistry Advances} (Elsevier, 2025) on real-time food recognition and personalised nutrition; built the Flutter client, FastAPI/PyTorch inference server, and Firebase auth}
+      \resumeItem{Built a Flutter client and FastAPI/PyTorch inference service for real-time food recognition, calorie tracking, personalized nutrition analysis, and Firebase authentication}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
+%-----------PUBLICATIONS-----------
+\section{Publication}
+\begin{itemize}[leftmargin=0.2in, itemsep=1pt, topsep=1pt]
+  \normalsize{
+    \item \textbf{``Diet Engine: A real-time food nutrition assistant system for personalized dietary guidance.''}
+          \textit{Food Chemistry Advances}, Elsevier, 2025. \href{https://doi.org/10.1016/j.focha.2025.100978}{doi:10.1016/j.focha.2025.100978}
+  }
+\end{itemize}
+
 %-----------ACHIEVEMENTS-----------
 \section{Achievements \& Activities}
 \begin{itemize}[leftmargin=0.2in, itemsep=1pt, topsep=1pt]
-  \small{
+  \normalsize{
     \item \textbf{JAXA Kibo Robot Programming Challenge 2025:} \textbf{1st place, Bangladesh regional}; \textbf{4th place globally};
           programmed Astrobee robots for zero-gravity navigation and AR object recognition aboard the ISS
     \item \textbf{Microsoft / VibeVoice:} Contributed package-import support to a 40k+ star emotional voice-synthesis repository

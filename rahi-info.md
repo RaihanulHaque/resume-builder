@@ -1,7 +1,7 @@
 # Rahi - Full Info Dump (Resume Research)
 
 > Source: Resume V6, codebase exploration (~75 projects), memory files  
-> Last updated: 2026-06-26
+> Last updated: 2026-06-29
 
 ---
 
@@ -24,14 +24,15 @@
 
 **Bachelor of Science in Mechatronics Engineering**  
 Rajshahi University of Engineering & Technology (RUET)  
-March 2022 — August 2026 (expected)
+2022 — 2026
+CGPA: 3.19/4.00
 
 ---
 
 ## WORK EXPERIENCE
 
 ### Resume Summary Direction
-- AI engineer working across agentic backends, real-time voice systems, and edge/on-device ML
+- AI engineer working across agentic backends, real-time voice systems, and edge and on-device ML
 - Avoid "final-year student" framing because graduation is near; education already provides the timeline
 - Tone should be modern, focused, and systems-oriented rather than generic student/resume phrasing
 
@@ -39,15 +40,17 @@ March 2022 — August 2026 (expected)
 **April 2024 – Present**
 - Owns backend architecture for an AI-powered SaaS platform
 - Django + PostgreSQL systems, focus on modularity, reliability, scale
-- Integrated production LLM, ASR, and TTS inference pipelines into the web backend
-- Enables real-time AI voice and text interaction features at the product layer
+- Architects production RAG services with structured ingestion and retrieval flows, resilient failure handling, and reliable product-facing APIs
+- Builds OCR and ASR data-collection pipelines
+- Integrates LLM, speech, and document-processing capabilities into the web backend
 
 ### Cortex Technologies | ML Engineer
 **January 2024 – Present** | Contract / Freelance Collaboration  
 Context: Collaborative client-project work with Abrar/Cortex Technologies. Abrar sources freelance/client projects; Rahi owns the ML/AI engineering portion. This should not be framed as a funded startup or formal company employment.
 
 - Owns ML engineering for client projects: custom YOLO-based detection pipelines, stereo depth estimation, and real-time vision inference on resource-constrained edge hardware
-- Builds language-model and automation components for client workflows, including model selection, prompt/tool orchestration, quantization (TFLite/ONNX), and deployment on edge devices
+- Built an automated object-detection dataset generation pipeline using SAM 3: users provide labels, the model generates object bounding boxes, and annotations are exported in COCO dataset format
+- Optimizes and deploys models on resource-constrained hardware using TFLite, ONNX, and quantization techniques
 
 ### Outlier | AI Trainer, Quality Reviewer
 **September 2024 – December 2024**
@@ -85,7 +88,7 @@ PostgreSQL, Supabase, Redis, Firebase
 > MongoDB not included — not a primary tool.
 
 ### Infrastructure
-Docker, Docker Compose, WebRTC, WebSocket, LiveKit, FastRTC
+Docker, Docker Compose, WebRTC, WebSocket, LiveKit
 
 ### Audio/Speech Models
 Parakeet (NeMo), Whisper, Kokoro, Qwen3-TTS, ElevenLabs, Deepgram, Silero VAD
@@ -119,7 +122,7 @@ GPT-family APIs, provider-hosted LLM APIs, Groq-hosted models, local models (MLX
 - 4× less VRAM: 1.5GB vs 6GB at 720p
 - Multi-level GRU hierarchy (3 scales: 1/4, 1/8, 1/16)
 - EPE 0.57 in 1,600 training steps
-- Decouples DEFOM architectural innovations from frozen DINOv2 backbone
+- Decouples iterative multi-scale GRU refinement from a frozen DINOv2 backbone to reduce compute and memory costs while preserving depth-refinement quality across scales
 - Convex upsampling for sharp edges, 22 iterative refinement steps
 - Exported to ONNX
 
@@ -226,4 +229,4 @@ DOI: [https://doi.org/10.1016/j.focha.2025.100978](https://doi.org/10.1016/j.foc
 
 ## TECH TAGS (for ATS/keyword optimization)
 
-Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, RAG, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, FastRTC, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
+Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, RAG, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
