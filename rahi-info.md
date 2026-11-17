@@ -1,7 +1,7 @@
 # Rahi - Full Info Dump (Resume Research)
 
-> Source: Resume V6, codebase exploration (~75 projects), memory files  
-> Last updated: 2026-06-29
+> Source: Resume (Nov 2026), codebase exploration (~75 projects), memory files  
+> Last updated: 2026-11-17
 
 ---
 
@@ -25,19 +25,27 @@
 **Bachelor of Science in Mechatronics Engineering**  
 Rajshahi University of Engineering & Technology (RUET)  
 2022 — 2026
-CGPA: 3.19/4.00
+CGPA: 3.16/4.00
 
 ---
 
 ## WORK EXPERIENCE
 
 ### Resume Summary Direction
-- AI engineer working across agentic backends, real-time voice systems, and edge and on-device ML
-- Avoid "final-year student" framing because graduation is near; education already provides the timeline
-- Tone should be modern, focused, and systems-oriented rather than generic student/resume phrasing
+- Plain, industry-standard tone; no "I", no self-promotion, no buzzword stacking
+- Current summary: "AI Engineer with 2+ years of experience building and deploying LLM applications, including RAG chatbots, AI agents, and recommendation systems serving millions of users in fintech and media. Experienced in optimizing models for on-device inference on mobile and edge devices with llama.cpp, TFLite, and ONNX."
+- Rules: max 3 bullets per job on the resume; keep Outlier/Remotasks entry; Sysnova/Dhaka not repeated in the summary
+
+### Sysnova Information Systems | AI Engineer
+**October 2026 – Present** | Dhaka, Bangladesh
+- Built a RAG chatbot for Prime Bank's MFS Lenden (~700k users)
+- Built a recommendation engine for the Deepto Play OTT platform (8.7M total users, ~1M active); code folder: `novasight`
+- Built nova-gate, an internal AI coding gateway on LiteLLM + OpenRouter: routes each request to cheap/mid/strong model tiers, per-developer keys and budgets. The JEV decision model (TypeSafe AI, hosted classifier, provider `jev`, model `jev-latest`, key `TYPESAFE_API_KEY`) is wired in as `nova-auto-jev` for A/B testing only; the default router is LiteLLM's heuristic classifier (`nova-auto`)
+- Built an AI agent for internal LibreOffice Writer and Calc with an AI helper for spreadsheet and document work; code folder: `cellscribe`
+- Resume shows these as 3 bullets (Lenden + Deepto Play merged; gateway; LibreOffice agent)
 
 ### Intelsense AI | Backend Engineer
-**April 2024 – Present**
+**April 2024 – September 2026** (left in September)
 - Owns backend architecture for an AI-powered SaaS platform
 - Django + PostgreSQL systems, focus on modularity, reliability, scale
 - Architects production RAG services with structured ingestion and retrieval flows, resilient failure handling, and reliable product-facing APIs
@@ -46,7 +54,7 @@ CGPA: 3.19/4.00
 
 ### Cortex Technologies | ML Engineer
 **January 2024 – Present** | Contract / Freelance Collaboration  
-Context: Collaborative client-project work with Abrar/Cortex Technologies. Abrar sources freelance/client projects; Rahi owns the ML/AI engineering portion. This should not be framed as a funded startup or formal company employment.
+Context: Hobby company with friends that takes freelance work occasionally (still active; resume label "Freelance Collaboration"). Collaborative client-project work with Abrar/Cortex Technologies. Abrar sources freelance/client projects; Rahi owns the ML/AI engineering portion. This should not be framed as a funded startup or formal company employment.
 
 - Owns ML engineering for client projects: custom YOLO-based detection pipelines, stereo depth estimation, and real-time vision inference on resource-constrained edge hardware
 - Built an automated object-detection dataset generation pipeline using SAM 3: users provide labels, the model generates object bounding boxes, and annotations are exported in COCO dataset format
@@ -67,13 +75,14 @@ Context: Collaborative client-project work with Abrar/Cortex Technologies. Abrar
 ## SKILLS
 
 ### Languages
-Python (primary), C/C++, Dart/Flutter, Rust, Swift, SQL
+Python (primary), C/C++, Dart/Flutter, Rust, Swift, Kotlin, SQL
 > Removed from resume: Go (not used enough). JS/TypeScript not included — not comfortable coding in JS.
 
 ### Frameworks & Libraries
 - **Backend:** FastAPI, Django, Flask
 - **Mobile:** Flutter (iOS/Android)
-- **ML/AI:** PyTorch, TensorFlow, MLX (Apple Silicon), HuggingFace, LangChain
+- **ML/AI:** PyTorch, TensorFlow, MLX (Apple Silicon), HuggingFace, LangChain, LiteLLM, llama.cpp
+- **LLM gateways:** OpenRouter, LiteLLM
 - **Data:** NumPy, Pandas, SQLModel
 
 ### AI/ML Specializations
@@ -100,8 +109,9 @@ GPT-family APIs, provider-hosted LLM APIs, Groq-hosted models, local models (MLX
 
 ## PROJECTS
 
-> Current resume order: Gesprek → StereoLite → Hishab → Diet Engine  
-> Perceptron remains a backup/optional project, but is omitted from the compact one-page resume.
+> Current resume order: Kiln → StereoLite → AgriSense → Hishab → Gesprek (ordered by impact; Hishab is a Kiln demo so it sits lower)  
+> Diet Engine was removed from Projects because the paper already covers it (see Publications).  
+> Perceptron remains a backup/optional project, but is omitted from the resume.
 
 ### Gesprek — AI Voice Agents Platform
 **Status:** Built/deployed as a full product prototype; now archived/shut down after feasibility and market constraints  
@@ -126,15 +136,27 @@ GPT-family APIs, provider-hosted LLM APIs, Groq-hosted models, local models (MLX
 - Convex upsampling for sharp edges, 22 iterative refinement steps
 - Exported to ONNX
 
-### Hishab — Agentic Expense Tracking App
-**May 2024 – August 2025**  
-**Stack:** Flutter, FastAPI, agentic LLM workflows, Supabase, SQLModel
-- Tracks income/expenses through natural-language prompts in Banglish (Bengali+English)
-- Agent/tool-calling workflow for AI-driven financial parsing, categorization, and record creation
-- Full auth, user isolation (row-level security), SMTP integration
-- Has both Flutter mobile app and companion web frontend
+### Kiln — On-Device LLM Runtime
+**October 2026 – Present** | https://github.com/RaihanulHaque/kiln  
+**Stack:** C/C++, llama.cpp, Flutter, Kotlin, Rust, React Native
+- Open-source on-device runtime for Android and desktop (iOS in progress); chat, decision, embedding, speech-to-text (Whisper, Parakeet, Qwen3-ASR) and text-to-speech (Pocket TTS) through one C API
+- Bindings: Flutter (`kiln_flutter` on pub.dev), Kotlin, Rust, React Native
+- Acceleration detected at runtime, never assumed; plain Armv8 CPU build for phones without dot-product support; reports backend, memory, real tokens/s
+- 505 C checks across Android, macOS, Linux; tested on Pixel 8, Galaxy S26 Ultra, M4 Pro MacBook
 
-### Diet Engine — AI Nutrition Coach & Calorie Tracker
+### AgriSense — Autonomous Agricultural Advisor
+**IUT Hackathon** | LangGraph, RAG, FastAPI
+- Multi-agent system that plans a farmer's season (costs, weather) and keeps advising; real government soil/weather/crop data by district and upazila; crop leaf-disease classifier; deployed at agrisense.cortextech.dev
+
+### Hishab — Offline AI Expense Tracker
+**May 2024 – Present**  
+**Stack:** Python, PyTorch, Qwen3.5-0.8B, GGUF, Kiln, Flutter
+- Fine-tuned Qwen3.5-0.8B to turn English, Bangla, Banglish and mixed messages into structured income/expense records; offline Android app (`hishab-offline`), model runs on-device through Kiln, no server, no account
+- Latest model v13 (vocabulary trimmed 248k → 38k tokens): 343 MB (was 529 MB in v10), ~45% faster generation, ~51 tokens/s on Pixel 8, 94.2% exact-match on cleaned test split, 89.2% on spelled-out amounts (source: `hishab-offline` README; the `hishab` folder is still at v10: 529 MB, 93.1% on clean test)
+- Relabelled training data against a written labelling guideline (two independent labellers in v10)
+- Older version: Flutter + FastAPI + Gemini function calling + Supabase (`hishab_app`)
+
+### Diet Engine — AI Nutrition Coach & Calorie Tracker (removed from resume Projects; paper stays)
 **February 2024 – May 2024**  
 **Stack:** Flutter, FastAPI, Firebase, PyTorch
 - Food recognition with server-side PyTorch models
@@ -229,4 +251,4 @@ DOI: [https://doi.org/10.1016/j.focha.2025.100978](https://doi.org/10.1016/j.foc
 
 ## TECH TAGS (for ATS/keyword optimization)
 
-Python, FastAPI, Django, Flutter, Dart, Rust, Swift, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, RAG, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming
+Python, FastAPI, Django, Flutter, Dart, Rust, Swift, Kotlin, LiteLLM, OpenRouter, llama.cpp, GGUF, PostgreSQL, Supabase, Redis, Docker, PyTorch, TensorFlow, MLX, HuggingFace, LangChain, LLM APIs, RAG, AI agents, tool calling, ElevenLabs, Deepgram, Groq, WebRTC, LiveKit, WebSocket, Silero VAD, Whisper, Parakeet, Kokoro TTS, YOLO, OpenCV, TFLite, ONNX, Apple Silicon, Edge AI, Microservices, Git, C++, SQL, Competitive Programming

@@ -98,9 +98,9 @@
 %-----------SUMMARY-----------
 \section{Summary}
 \normalsize{
-  AI engineer working across agentic backends, real-time voice systems, and edge and on-device ML.
-  Builds production Django/FastAPI systems, speech pipelines, and optimized computer-vision models,
-  with peer-reviewed research in AI nutrition and open-source contributions to voice synthesis tooling.
+  AI Engineer with 2+ years of experience building and deploying LLM applications, including RAG chatbots,
+  AI agents, and recommendation systems serving millions of users in fintech and media. Experienced in
+  optimizing models for on-device inference on mobile and edge devices with llama.cpp, TFLite, and ONNX.
 }
 
 \vspace{2pt}
@@ -110,17 +110,17 @@
 \resumeSubHeadingListStart
   \resumeSubheading
     {Rajshahi University of Engineering \& Technology (RUET)}{Rajshahi, Bangladesh}
-    {B.Sc.\ in Mechatronics Engineering $|$ CGPA: 3.19/4.00}{2022 -- 2026}
+    {B.Sc.\ in Mechatronics Engineering $|$ CGPA: 3.16/4.00}{2022 -- 2026}
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt, topsep=2pt]
   \normalsize\item{
-    \textbf{Languages:}\quad Python, C/C++, Dart, Rust, Swift, SQL \\
-    \textbf{Frameworks \& Libraries:}\quad FastAPI, Django, Flutter, PyTorch, TensorFlow, MLX, LangChain, HuggingFace \\
-    \textbf{Databases \& Infra:}\quad PostgreSQL, Supabase, Redis, Firebase, Docker, WebRTC, LiveKit, Ray \\
-    \textbf{AI / ML:}\quad Agentic LLM workflows, RAG, LLM fine-tuning (TRL, Unsloth, LoRA/QLoRA), ASR/TTS/VAD, YOLO, stereo depth, TFLite, ONNX, MLX, quantization
+    \textbf{Languages:}\quad Python, C/C++, Dart, Rust, Swift, Kotlin, SQL \\
+    \textbf{Frameworks \& Libraries:}\quad FastAPI, Django, Flutter, PyTorch, TensorFlow, MLX, LangChain, LiteLLM, HuggingFace, llama.cpp \\
+    \textbf{Databases \& Infra:}\quad PostgreSQL, Supabase, Redis, Firebase, Docker, OpenRouter, WebRTC, LiveKit, Ray \\
+    \textbf{AI / ML:}\quad Agentic LLM workflows, LLM routing, RAG, LLM fine-tuning (TRL, Unsloth, LoRA/QLoRA), ASR/TTS/VAD, YOLO, stereo depth, TFLite, ONNX, MLX, GGUF quantization
   }
 \end{itemize}
 
@@ -131,17 +131,26 @@
 \resumeSubHeadingListStart
 
   \resumeSubheading
-    {Intelsense AI}{Apr 2024 -- Present}
+    {Sysnova Information Systems}{Oct 2026 -- Present}
+    {AI Engineer}{Dhaka, Bangladesh}
+    \resumeItemListStart
+      \resumeItem{Built a \textbf{RAG chatbot} for Prime Bank's mobile financial service \textbf{Lenden}, serving around \textbf{700k users}, and a \textbf{recommendation engine} for the Deepto Play OTT platform (\textbf{8.7M} total, \textbf{1M} active users)}
+      \resumeItem{Developed an internal \textbf{AI coding gateway} on \textbf{LiteLLM} and \textbf{OpenRouter} that routes each request to cheap, mid, or strong models, with per-developer keys and budgets; A/B tested a hosted \textbf{JEV} decision model as the routing classifier}
+      \resumeItem{Developed an \textbf{AI agent} for internal \textbf{LibreOffice Writer and Calc} that automates spreadsheet and document work}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Intelsense AI}{Apr 2024 -- Sep 2026}
     {Backend Engineer}{Remote}
     \resumeItemListStart
-      \resumeItem{Own the backend architecture for an AI-powered SaaS platform, designing \textbf{Django}/\textbf{PostgreSQL} systems with a focus on modularity, reliability, and scale}
-      \resumeItem{Architect production \textbf{RAG} services with structured ingestion and retrieval flows, resilient failure handling, and reliable product-facing APIs}
-      \resumeItem{Build \textbf{OCR and ASR data-collection pipelines} and integrate LLM, speech, and document-processing capabilities into the web backend}
+      \resumeItem{Owned the backend architecture for an AI-powered SaaS platform, designing \textbf{Django}/\textbf{PostgreSQL} systems with a focus on modularity, reliability, and scale}
+      \resumeItem{Architected production \textbf{RAG} services with structured ingestion and retrieval flows, resilient failure handling, and reliable product-facing APIs}
+      \resumeItem{Built \textbf{OCR and ASR data-collection pipelines} and integrated LLM, speech, and document-processing capabilities into the web backend}
     \resumeItemListEnd
 
   \resumeSubheading
     {Cortex Technologies}{Jan 2024 -- Present}
-    {ML Engineer}{Contract Collaboration}
+    {ML Engineer}{Freelance Collaboration}
     \resumeItemListStart
       \resumeItem{Own the ML engineering track for client projects sourced through a small freelance collaboration, building custom object detection pipelines, stereo depth estimation, and real-time edge-vision inference}
       \resumeItem{Built an automated object-detection dataset pipeline that uses \textbf{SAM 3} to generate bounding boxes from user-provided labels and exports annotations in \textbf{COCO format}}
@@ -162,10 +171,10 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{AgriSense: Autonomous Agricultural Advisor} $|$ \emph{LangGraph, RAG, FastAPI}}{IUT Hackathon}
+    {\textbf{\href{https://github.com/RaihanulHaque/kiln}{Kiln: On-Device LLM Runtime}} $|$ \emph{C/C++, llama.cpp, Flutter, Kotlin, Rust, React Native}}{Oct 2026 -- Present}
     \resumeItemListStart
-      \resumeItem{Built a \textbf{multi-agent system} with LangGraph that plans a farmer's growing season, including costs and weather, and keeps giving advice as the season goes on}
-      \resumeItem{Used real government data on soil, weather, and crop needs by district and upazila, plus a crop leaf-disease classifier, so the advice matches what a real soil scientist would recommend; deployed with CI/CD at \href{https://agrisense.cortextech.dev/}{\texttt{agrisense.cortextech.dev}}}
+      \resumeItem{Built an open-source \textbf{on-device LLM runtime} on llama.cpp for Android and desktop, serving \textbf{chat, decision, embedding, speech-to-text, and text-to-speech} models through one C API, with bindings for Flutter (published on pub.dev as \texttt{kiln\_flutter}), Kotlin, Rust, and React Native}
+      \resumeItem{Detects hardware acceleration at runtime and falls back to a plain Armv8 CPU build on older phones; reports the loaded backend, memory use, and real tokens/s; verified with \textbf{505 C checks} across Android, macOS, and Linux}
     \resumeItemListEnd
 
   \resumeProjectHeading
@@ -176,23 +185,24 @@
     \resumeItemListEnd
 
   \resumeProjectHeading
+    {\textbf{AgriSense: Autonomous Agricultural Advisor} $|$ \emph{LangGraph, RAG, FastAPI}}{IUT Hackathon}
+    \resumeItemListStart
+      \resumeItem{Built a \textbf{multi-agent system} with LangGraph that plans a farmer's growing season, including costs and weather, and keeps giving advice as the season goes on}
+      \resumeItem{Used real government data on soil, weather, and crop needs by district and upazila, plus a crop leaf-disease classifier, so the advice matches what a real soil scientist would recommend; deployed with CI/CD at \href{https://agrisense.cortextech.dev/}{\texttt{agrisense.cortextech.dev}}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Hishab: Offline AI Expense Tracker} $|$ \emph{Python, PyTorch, Qwen3.5, GGUF, Kiln, Flutter}}{May 2024 -- Present}
+    \resumeItemListStart
+      \resumeItem{Fine-tuned \textbf{Qwen3.5-0.8B} to turn English, Bangla, Banglish, and mixed-language messages into structured income and expense records, shipped as an offline Android app: the \textbf{343 MB} quantized model runs on the phone through Kiln at about \textbf{51 tokens/s} on a Pixel 8, with no server and no account}
+      \resumeItem{Relabelled the synthetic training data against a written guideline and trimmed the vocabulary from 248k to 38k tokens, shrinking the model from 529 MB to 343 MB and speeding up generation by about 45\%, while reaching \textbf{94.2\%} exact-match on a cleaned held-out test set}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
     {\textbf{Gesprek} $|$ \emph{FastAPI, PostgreSQL, Redis, Supabase, Docker, ElevenLabs, LiveKit}}{Archived}
     \resumeItemListStart
       \resumeItem{Built and deployed a \textbf{production-ready voice-agent platform} with configurable multi-agent workflows, Supabase auth, Redis-backed real-time TTS, subscriptions, and containerized services}
       \resumeItem{Engineered multi-tenant agent orchestration and independently scalable services; archived after launch since the project could not secure enough funding to take it to market}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{Hishab: Agentic Expense Tracker} $|$ \emph{Flutter, FastAPI, Supabase, SQLModel}}{May 2024 -- Aug 2025}
-    \resumeItemListStart
-      \resumeItem{Built a production Flutter\,+\,FastAPI app that converts Banglish natural-language prompts into structured financial records using \textbf{agentic tool-calling workflows}}
-      \resumeItem{Implemented Supabase row-level-security auth, SMTP notification flows, SQLModel persistence, and a companion web client}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{Diet Engine: AI Nutrition Coach} $|$ \emph{Flutter, FastAPI, PyTorch, Firebase}}{Feb -- May 2024}
-    \resumeItemListStart
-      \resumeItem{Built a Flutter client and FastAPI/PyTorch inference service for real-time food recognition, calorie tracking, personalized nutrition analysis, and Firebase authentication}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
