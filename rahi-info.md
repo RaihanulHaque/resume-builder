@@ -152,7 +152,8 @@ GPT-family APIs, provider-hosted LLM APIs, Groq-hosted models, local models (MLX
 **May 2024 – Present**  
 **Stack:** Python, PyTorch, Qwen3.5-0.8B, GGUF, Kiln, Flutter
 - Fine-tuned Qwen3.5-0.8B to turn English, Bangla, Banglish and mixed messages into structured income/expense records; offline Android app (`hishab-offline`), model runs on-device through Kiln, no server, no account
-- Latest model v13 (vocabulary trimmed 248k → 38k tokens): 343 MB (was 529 MB in v10), ~45% faster generation, ~51 tokens/s on Pixel 8, 94.2% exact-match on cleaned test split, 89.2% on spelled-out amounts (source: `hishab-offline` README; the `hishab` folder is still at v10: 529 MB, 93.1% on clean test)
+- Latest model v13-trim38k-L20 (published 2026-11-17): vocabulary trimmed 248k → 38k tokens, then 4 of 24 layers pruned (8, 9, 12, 13) and healed by distillation from v13. Q4_K_M-imat 288 MB (v13: 343 MB; v10: 529 MB), 94.4% exact-match on test_clean_v2 (v13: 94.2%), 89.9% on spelled-out amounts. Pixel speed not yet measured for L20; v13 runs ~51 tokens/s on a Pixel 8, and the app still ships v13. HF: `ryuma007/hishab-qwen3.5-0.8b-pipe-signed-full-v13-trim38k-L20-GGUF`. Source: `hishab` repo `ml/results/EXPERIMENTS.md`
+- Résumé shows: 51 tok/s on Pixel 8 (v13), and 529 MB → 288 MB with no measurable accuracy loss, 94.4% exact-match
 - Relabelled training data against a written labelling guideline (two independent labellers in v10)
 - Older version: Flutter + FastAPI + Gemini function calling + Supabase (`hishab_app`)
 

@@ -194,8 +194,8 @@
   \resumeProjectHeading
     {\textbf{Hishab: Offline AI Expense Tracker} $|$ \emph{Python, PyTorch, Qwen3.5, GGUF, Kiln, Flutter}}{May 2024 -- Present}
     \resumeItemListStart
-      \resumeItem{Fine-tuned \textbf{Qwen3.5-0.8B} to turn English, Bangla, Banglish, and mixed-language messages into structured income and expense records, shipped as an offline Android app: the \textbf{343 MB} quantized model runs on the phone through Kiln at about \textbf{51 tokens/s} on a Pixel 8, with no server and no account}
-      \resumeItem{Relabelled the synthetic training data against a written guideline and trimmed the vocabulary from 248k to 38k tokens, shrinking the model from 529 MB to 343 MB and speeding up generation by about 45\%, while reaching \textbf{94.2\%} exact-match on a cleaned held-out test set}
+      \resumeItem{Fine-tuned \textbf{Qwen3.5-0.8B} to turn English, Bangla, Banglish, and mixed-language messages into structured income and expense records, shipped as an offline Android app that runs the model on the phone through Kiln at about \textbf{51 tokens/s} on a Pixel 8, with no server and no account}
+      \resumeItem{Trimmed the vocabulary from 248k to 38k tokens, then pruned 4 of 24 layers and healed the model by distillation, shrinking it from 529 MB to \textbf{288 MB} with no measurable accuracy loss: \textbf{94.4\%} exact-match on a cleaned held-out test set}
     \resumeItemListEnd
 
   \resumeProjectHeading
